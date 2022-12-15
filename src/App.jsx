@@ -1,25 +1,32 @@
 import React from "react";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Error404 from "./componentes/Error404";
 import Footer from "./componentes/Footer";
+import ItemDetailContainer from "./componentes/ItemDetailContainer";
 import ItemListContainer from "./componentes/ItemListContainer";
 import NavBar from "./componentes/NavBar";
 import PromocionApp from "./componentes/PromocionApp";
-import Props from "./componentes/Props";
-import States from "./componentes/States";
+
+
 
 
 
 function App (){
   return(
   <div className="container-fluid">
+    <BrowserRouter>
     <NavBar/>
-    <ItemListContainer greeting={"Trabajamos para garantizar un acceso democrático y federal a los documentos que hacen a la historia, la memoria y los derechos del Pueblo argentino."}/>
+    <Routes> 
+      <Route path={"/"} element={<ItemListContainer />} />
+      <Route path={"/categoria/:id"} element={<ItemListContainer />} />
+      <Route path={"/item/:id"} element= {<ItemDetailContainer />} />
+      <Route path={"*"} element={<Error404/>}/>
+    </Routes>
     <PromocionApp/>
-    <Props mensaje1={"hola coder"} mensaje2= {"bienvenidosss"}/>
-    <States/>
     <Footer/>
+    </BrowserRouter>
 </div>
   );
 }
- //componente props//
-export default App;
 
+export default App;
