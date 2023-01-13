@@ -6,7 +6,7 @@ const Footer= () =>{
                 <div className="row footer">
                      <div className="col-g-6 text-center">
                     
-                        <img src={"images/agn 7.png"} alt="footer" width={220} />
+                        <img src={"./images/agn 7.png"} alt="footer" width={220} />
                         
                     </div>
 

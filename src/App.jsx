@@ -6,6 +6,8 @@ import ItemDetailContainer from "./componentes/ItemDetailContainer";
 import ItemListContainer from "./componentes/ItemListContainer";
 import NavBar from "./componentes/NavBar";
 import PromocionApp from "./componentes/PromocionApp";
+import CartContextProvider from "./componentes/context/CartContext";
+import Cart from "./componentes/Cart";
 
 
 
@@ -13,6 +15,7 @@ import PromocionApp from "./componentes/PromocionApp";
 
 function App (){
   return(
+    <CartContextProvider>
   <div className="container-fluid">
     <BrowserRouter>
     <NavBar/>
@@ -20,12 +23,14 @@ function App (){
       <Route path={"/"} element={<ItemListContainer />} />
       <Route path={"/categoria/:id"} element={<ItemListContainer />} />
       <Route path={"/item/:id"} element= {<ItemDetailContainer />} />
+      <Route path={"/cart"} element= {<Cart />} />
       <Route path={"*"} element={<Error404/>}/>
     </Routes>
     <PromocionApp/>
     <Footer/>
     </BrowserRouter>
 </div>
+</CartContextProvider>
   );
 }
 
