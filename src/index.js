@@ -17,13 +17,10 @@ const firebaseConfig = {
   messagingSenderId: "279470333502",
   appId: "1:279470333502:web:801fe5826d5d1e9b1b3b6f"
 };
-initializeApp(firebaseConfig);
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  
-    (<App />)
- 
-);
+root.render(<App />);
