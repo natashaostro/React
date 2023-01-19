@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {  addDoc, collection, getFirestore, getDocs,query,where } from "firebase/firestore";
+import {  collection, getFirestore, getDocs,query,where } from "firebase/firestore";
 import { useParams} from "react-router-dom";
 import ItemList from "./ItemList";
 /*import arrayProductos from "./json/arrayProductos.json";*/
@@ -47,7 +47,7 @@ setItems(snapShot.docs.map((doc)=>
     ({id:doc.id, ...doc.data()})
 ))
 });
-},[]);
+},[id]);
 console.log(items);
     return (
         <div className="container py-5">
